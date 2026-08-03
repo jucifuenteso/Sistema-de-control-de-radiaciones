@@ -1,0 +1,60 @@
+# ============================
+# Credenciales / configuración sensible
+# ============================
+.env
+.env.*
+*.env
+secrets.py
+config_local.py
+credentials.json
+*_credentials.*
+*.key
+*.pem
+
+# ============================
+# Python
+# ============================
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+*.egg
+
+# Entornos virtuales
+venv/
+.venv/
+env/
+ENV/
+
+# Herramientas / cachés
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+*.log
+
+# ============================
+# Arduino / PlatformIO / ESP32
+# ============================
+.pio/
+.pioenvs/
+.piolibdeps/
+*.hex
+*.bin
+*.elf
+*.map
+build/
+
+# Arduino IDE
+*.ino.cpp
+
+# ============================
+# Sistema operativo / editor
+# ============================
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
