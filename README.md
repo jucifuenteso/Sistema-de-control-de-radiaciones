@@ -252,6 +252,3 @@ Se recomienda crear un **dashboard** en Adafruit IO con widgets tipo *line chart
 
 ---
 
-## Licencia
-
-*(Especificar la licencia del proyecto, por ejemplo MIT, o indicar que es un proyecto académico de uso interno)*
