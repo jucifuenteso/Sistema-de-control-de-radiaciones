@@ -197,15 +197,10 @@ pip install pyserial adafruit-io
 
 ## Instalación y configuración
 
-1. **Cargar el firmware** `esp32_control.ino` en el ESP32 usando Arduino IDE, seleccionando la placa correspondiente y el puerto correcto.
-2. **Conectar el hardware**: motores paso a paso a los pines indicados, y módulo XBee receptor a los pines RX2/TX2 del ESP32.
-3. **Configurar Adafruit IO**:
-   - Crear una cuenta en [io.adafruit.com](https://io.adafruit.com).
-   - Crear los tres feeds: `conteos-por-segundo`, `conteos-por-minuto` y `ultimo-comando`.
-   - Obtener el `AIO_USERNAME` y el `AIO_KEY` desde **My Key** en el panel de Adafruit IO.
-4. **Configurar credenciales en la interfaz de Python**: definir `AIO_USERNAME` y `AIO_KEY` como variables de entorno (recomendado) en lugar de escribirlas directamente en el código fuente (ver sección [Seguridad y buenas prácticas](#seguridad-y-buenas-prácticas)).
-5. **Instalar dependencias de Python** (ver sección anterior).
-6. **Ejecutar la interfaz**:
+1. **Cargar el firmware** 
+2. **Conectar el hardware**: 
+3. **Instalar dependencias de Python** 
+4. **Ejecutar la interfaz**:
 
 ```bash
 python interfaz_control.py
@@ -249,37 +244,9 @@ Se recomienda crear un **dashboard** en Adafruit IO con widgets tipo *line chart
 
 ---
 
-## Seguridad y buenas prácticas
 
-> ⚠️ **Importante**: el código fuente original incluye la clave de API de Adafruit IO (`AIO_KEY`) escrita directamente en el archivo. **Antes de subir el proyecto a un repositorio público (GitHub, GitLab, etc.), se debe:**
->
-> 1. Revocar y regenerar la clave `AIO_KEY` actual desde el panel de Adafruit IO (**My Key**), ya que quedó expuesta en el código compartido.
-> 2. Mover las credenciales (`AIO_USERNAME`, `AIO_KEY`) a variables de entorno o a un archivo de configuración excluido del control de versiones (por ejemplo, un `.env` agregado a `.gitignore`), y cargarlas en `interfaz_control.py` con `os.environ.get(...)`.
-> 3. Nunca hacer *commit* de credenciales, tokens o claves de API al historial de Git.
 
-Otras recomendaciones:
 
-- Validar siempre que el puerto serial esté disponible antes de intentar reconectar, para evitar bloqueos de la interfaz.
-- Considerar agregar un mecanismo de *timeout*/reintento en la comunicación XBee para tolerar pérdidas de paquetes.
-
----
-
-## Posibles mejoras futuras
-
-- Registro histórico local (CSV/base de datos) de los conteos, además del envío a Adafruit IO.
-- Umbral de referencia (`conteoreferencia`) configurable remotamente desde la interfaz de Python en lugar de estar fijo en el firmware.
-- Retroalimentación visual (LED o buzzer) en el ESP32 ante niveles críticos de radiación.
-- Autenticación y cifrado en el enlace XBee para escenarios de uso real.
-- Sensores de posición (fin de carrera o encoder) en los motores para verificar físicamente que las compuertas alcanzaron la posición esperada.
-
----
-
-## Autores
-
-*(Completar con los nombres de los integrantes del equipo y la institución/asignatura)*
-
-- Nombre — Rol
-- Nombre — Rol
 
 **Asignatura:** Instrumentación Virtual
 
